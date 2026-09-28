@@ -150,6 +150,10 @@ Use the skill if and when you find it useful. Sometimes a manual review without 
 - Focus on teaching principles, not just fixing immediate issues
 - Build confidence through incremental improvement
 
+#### Vibecoded UIs
+- If students build a UI for any reason (e.g., a data dashboard), they can take more of a "vibecoding" approach
+- The code does not need to be reviewed line-for-line, but the PR should say it was vibecoded
+
 #### Review Timing
 - Code must be pushed every week, but it doesn't have to be merged that same week
 - Complete the review cycle by the following week at the latest

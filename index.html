@@ -660,30 +660,28 @@ sync:
         </div>
     </div>
 
-    <!-- Slide 12: AI Is a Tool, Not a Crutch -->
+    <!-- Slide 12: The Role of AI Coding Agents in Clinic -->
     <div class="slide">
         <div class="slide-content">
-            <h2>AI Is a Tool, Not a Crutch</h2>
-            <div class="highlight">
-                <h3>Code is for humans, still</h3>
-                <p>A good program must not only function, it must also be easy to read, be easy to maintain, and minimize complexity: what's the least that is necessary to solve the problem?</p>
-            </div>
+            <h2>The Role of AI Coding Agents in Clinic</h2>
             <div class="two-column">
                 <div>
-                    <h3>Students Should</h3>
+                    <h3>Expectations</h3>
                     <ul>
-                        <li>Own version control as a check on AI</li>
-                        <li>Tell the coding agent to only run code within Docker</li>
-                        <li>Write their weekly reports themselves. We encourage the use of LLMs for coding, but these reports must be written entirely by the student.</li>
+                        <li><strong>AI coding agents are permitted.</strong></li>
+                        <li><strong>Students have free Claude licenses</strong> and should be using Claude Code as their coding tool, unless there's a compelling reason for an exception.</li>
+                        <li><strong>Encourage students to use AI coding agents</strong>, especially on monotonous tasks that can be done much faster with AI.</li>
+                        <li><strong>Do not expect students to be good at using AI coding agents effectively.</strong></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Watch For</h3>
+                    <h3>Common Pitfalls</h3>
                     <ul>
-                        <li>AI coding used as a crutch, with students proceeding through the project with poor understanding</li>
-                        <li><strong>Python:</strong> Students should keep a very close hand on their code</li>
-                        <li><strong>TypeScript UIs:</strong> Students can be more hands-off</li>
-                        <li>Ask: "Can you walk me through this logic?"</li>
+                        <li><strong>Using AI as a crutch:</strong> Proceeding through the project with poor understanding. Students should keep a very close hand on their Python code.</li>
+                        <li><strong>Accepting output without understanding it:</strong> It's dangerous to run commands without having some idea of what they do. Claude is AI and can make mistakes.</li>
+                        <li><strong>Letting the agent own version control:</strong> Students need to own git as a check on AI.</li>
+                        <li><strong>Piling on code:</strong> AI is too willing to pile on more code (next slide).</li>
+                        <li><strong>AI-written reports:</strong> Weekly reports must be written entirely by the student.</li>
                     </ul>
                 </div>
             </div>
@@ -1023,6 +1021,11 @@ git checkout jd/my-feature && git rebase main
                         <li>"Consider extracting the file reading into a separate function"</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="highlight">
+                <h3>Exception: Vibecoded UIs</h3>
+                <p>If students build a UI for any reason (e.g., a data dashboard), they can take more of a "vibecoding" approach. The code does not need to be reviewed line-for-line, but <strong>the PR should say it was vibecoded</strong>.</p>
             </div>
         </div>
     </div>

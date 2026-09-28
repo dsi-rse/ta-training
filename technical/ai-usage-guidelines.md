@@ -10,21 +10,20 @@ Claude Code is useful for code reviews; we've provided a `/clinic-pr-review` ski
 - Then install Claude Code [using these instructions](https://claude.com/product/claude-code), either as a desktop application or as CLI.
 - **Verification:** Start a Claude Code session either in the desktop app or in a terminal.
 
-## AI Is a Tool, Not a Crutch
+## The Role of AI Coding Agents in Clinic
 
-### Code is for humans, still
-A good program must not only function, it must also be easy to read, be easy to maintain, and minimize complexity: what's the least that is necessary to solve the problem?
+### Expectations
+- **AI coding agents are permitted.**
+- **Students have free Claude licenses** and should be using Claude Code as their coding tool, unless there's a compelling reason for an exception.
+- **Encourage students to use AI coding agents**, especially on monotonous tasks that can be done much faster with AI.
+- **Do not expect students to be good at using AI coding agents effectively.**
 
-### Students Should
-- Own version control as a check on AI
-- Tell the coding agent to only run code within Docker
-- Write their weekly reports themselves. We encourage the use of LLMs for coding, but these reports must be written entirely by the student.
-
-### Watch For
-- AI coding used as a crutch, with students proceeding through the project with poor understanding
-- **Python:** Students should keep a very close hand on their code
-- **TypeScript UIs:** Students can be more hands-off
-- Ask: "Can you walk me through this logic?"
+### Common Pitfalls
+- **Using AI as a crutch:** Proceeding through the project with poor understanding. Students should keep a very close hand on their Python code. (UIs are an exception; see [Vibecoded UIs](./code-review.md#vibecoded-uis).)
+- **Accepting output without understanding it:** It's dangerous to run commands without having some idea of what they do. Claude is AI and can make mistakes.
+- **Letting the agent own version control:** Students need to own git as a check on AI.
+- **Piling on code:** AI is too willing to pile on more code (see below).
+- **AI-written reports:** Weekly reports must be written entirely by the student.
 
 ## How AI Changes Code Quality
 

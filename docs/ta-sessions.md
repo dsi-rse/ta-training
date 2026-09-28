@@ -70,6 +70,6 @@ Sessions are not traditional office hours — they are structured, working sessi
 - [ ] Confirmed every student is pushing to GitHub, opening pull requests, and opening issues.  
 - [ ] Reviewed open PRs and left reviews.  
 - [ ] Escalated technical issues to clinic RSE / technical staff and other student concerns to the mentor.  
-- [ ] Posted a weekly update for each project to the thread in the clinic TAs Slack channel: Are any students not pushing code? Are you caught up with reviews? Are students blocked by anything in particular? Anything to escalate?  
+- [ ] Posted a weekly update for each project to the thread in the clinic TAs Slack channel: Are any students not pushing code or putting work in issues? Are you caught up with reviews? Are students blocked by anything in particular? Anything to escalate?  
 
 See the clinic's [How to Run a TA Session](https://clinic.ds.uchicago.edu/mentor-ta/how-to-run-a-ta-session.html) checklist.

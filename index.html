@@ -333,7 +333,7 @@
                 <h3>The Weekly Slack Update</h3>
                 <p>One short post per project:</p>
                 <ul>
-                    <li>Are any students not pushing code?</li>
+                    <li>Are any students not pushing code or putting work in issues?</li>
                     <li>Are you caught up with reviews?</li>
                     <li>Are students blocked by anything in particular?</li>
                     <li>Anything to escalate?</li>
@@ -451,56 +451,51 @@
                 <div>
                     <h3>Poor Organization</h3>
                     <div class="code-block bad"><pre><code class="language-python">import pandas as pd
-import numpy as np
 
-def proc(d):
-    return d.groupby('cat').mean()
+df = pd.read_csv("data/survey_2023.csv")
+df2 = df[df["q7"] >= 0]
+p = len(df2[df2["q7"] >= 9]) / len(df2) * 100
+d = len(df2[df2["q7"] <= 6]) / len(df2) * 100
+print("2023:", p - d)
 
-def ld(f):
-    return pd.read_csv(f)
+df = pd.read_csv("data/survey_2024.csv")
+df2 = df[df["q7"] >= 0]
+p = len(df2[df2["q7"] >= 9]) / len(df2) * 100
+d = len(df2[df2["q7"] <= 6]) / len(df2) * 100
+print("2024:", p - d)
 
-def sv(d, f):
-    d.to_csv(f)
-
-def main():
-    d = ld('data.csv')
-    r = proc(d)
-    sv(r, 'out.csv')</code></pre></div>
+df = pd.read_csv("data/survey_2025.csv")
+df2 = df[df["q7"] >= 0]
+p = len(df2[df2["q7"] >= 9]) / len(df) * 100
+d = len(df2[df2["q7"] <= 6]) / len(df) * 100
+print("2025:", p - d)</code></pre></div>
                 </div>
                 <div>
                     <h3>Professional Structure</h3>
-                    <div class="code-block good"><pre><code class="language-python">"""Survey data analysis module."""
-from pathlib import Path
-import pandas as pd
-import logging
+                    <div class="code-block good"><pre><code class="language-python">import pandas as pd
 
-logger = logging.getLogger(__name__)
+NPS_QUESTION = "q7"   # "How likely are you to recommend us?" (0–10)
+PROMOTER_MIN = 9
+DETRACTOR_MAX = 6
 
-def load_survey_data(file_path: Path) -> pd.DataFrame:
-    """Load survey data with validation."""
-    logger.info(f"Loading survey data from {file_path}")
-    
-    if not file_path.exists():
-        raise FileNotFoundError(f"File not found: {file_path}")
-    
-    return pd.read_csv(file_path)
+def net_promoter_score(scores: pd.Series) -> float:
+    """% promoters minus % detractors, ignoring negative (missing) codes."""
+    valid = scores[scores >= 0]
+    promoters = (valid >= PROMOTER_MIN).mean()
+    detractors = (valid <= DETRACTOR_MAX).mean()
+    return 100 * (promoters - detractors)
 
-def calculate_category_averages(
-    df: pd.DataFrame, 
-    category_col: str = 'category'
-) -> pd.DataFrame:
-    """Calculate mean values grouped by category."""
-    return df.groupby(category_col).mean()
+def main(years: list[int]) -> None:
+    for year in years:
+        scores = pd.read_csv(f"data/survey_{year}.csv")[NPS_QUESTION]
+        print(f"{year}: {net_promoter_score(scores):+.1f}")
 
-def save_results(df: pd.DataFrame, output_path: Path) -> None:
-    """Save analysis results to CSV."""
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(output_path, index=False)
-    logger.info(f"Results saved to {output_path}")</code></pre></div>
+if __name__ == "__main__":
+    main([2023, 2024, 2025])</code></pre></div>
                 </div>
             </div>
             <div class="highlight">
-                <p><strong>Key Teaching Points:</strong> Good structure isn't about following rules - it's about making code maintainable and collaborative. Code should be clear in its purpose, not just its style: each function should do one thing the project needs, with a name that says what. Help students see how clear names and documentation save time for their future selves and teammates.</p>
+                <p><strong>Key Teaching Points:</strong> Good structure isn't about following rules - it's about making code maintainable and collaborative. Here the function has a reason to exist (it does a non-trivial thing), the comment is informative (it explains what "q7" is), names are better, computation is separated from I/O, and constants have been defined. Don't break a tiny script into functions that just wrap a pandas call or repeat error-checking pandas already does.</p>
             </div>
         </div>
     </div>
@@ -956,7 +951,7 @@ git checkout jd/my-feature && git rebase main
                     <ul>
                         <li>Runs the code and checks it against clinic standards</li>
                         <li>Installed from <a href="https://github.com/dsi-rse/skills" target="_blank">dsi-rse/skills</a> (coming soon)</li>
-                        <li>Just ask Claude: "Please install the 'clinic-pr-review' skill here: https://github.com/dsi-rse/skills/"</li>
+                        <li>Just ask Claude: "Please install the 'clinic-pr-review' skill globally from https://github.com/dsi-rse/skills/"</li>
                     </ul>
                     <h3>What It Doesn't Do</h3>
                     <ul>
@@ -1147,27 +1142,28 @@ df = pd.read_csv(data_path)</code></pre>
             <p>Most projects fail slowly and quietly. Escalate early rather than absorbing the problem yourself.</p>
             <div class="two-column">
                 <div>
-                    <h3>Clinic RSE / Technical Staff</h3>
+                    <h3>To Technical Advisor...</h3>
+                    <p>Via the mentor-TA Slack channel.</p>
                     <ul>
-                        <li><strong>A technical problem you cannot solve:</strong> environment, Docker, cluster, tooling</li>
-                        <li><strong>Where:</strong> the mentor-TA Slack channel</li>
-                        <li>If a student can't get their computer set up for a week, that's already ~12% of work time wasted</li>
+                        <li>A technical problem you cannot solve (environment, Docker, cluster, tooling)</li>
+                        <li>A student whose setup still isn't working</li>
                     </ul>
+                    <p>If a student can't get their computer set up for a week, that's already ~12% of work time wasted.</p>
                 </div>
                 <div>
-                    <h3>Project Mentor</h3>
+                    <h3>To Project Mentor...</h3>
                     <p>The mentor will likely escalate to the clinic director.</p>
                     <ul>
-                        <li><strong>A student is not pushing code, not attending, or not responding</strong></li>
-                        <li><strong>Project-level struggles:</strong> problem solving, understanding the data, direction</li>
-                        <li><strong>A student is behaving unprofessionally:</strong> immediately. This is not the TA's problem to correct.</li>
-                        <li><strong>A student asks you to complete their work:</strong> immediately</li>
-                        <li><strong>A student disputes a grade</strong></li>
-                        <li><strong>The external mentor is changing the project scope</strong></li>
+                        <li>A student is not pushing code, not attending, or not responding</li>
+                        <li>Project-level struggles (problem solving, understanding the data, direction)</li>
+                        <li>A student is behaving unprofessionally</li>
+                        <li>A student asks you to complete their work</li>
+                        <li>A student disputes a grade</li>
+                        <li>The external mentor is changing the project scope</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="code-block"><pre><code class="language-text"># Good escalation message:
 "I've noticed 3 teams this week struggling with Docker setup on Windows machines. 
 They're getting permission errors when mounting volumes. This is blocking their 

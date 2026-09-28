@@ -202,20 +202,22 @@ Use the skill if and when you find it useful. Sometimes a manual review without 
 
 Escalate early rather than absorbing the problem yourself. See the clinic's [escalation guide](https://clinic.ds.uchicago.edu/mentor-ta/escalation.html).
 
-### Clinic RSE / Technical Staff
-- **A technical problem you cannot solve:** environment, Docker, cluster, tooling
-- **Where:** the mentor-TA Slack channel
-- If a student can't get their computer set up for a week, that's already ~12% of work time wasted
+### To Technical Advisor...
+Via the mentor-TA Slack channel.
+- A technical problem you cannot solve (environment, Docker, cluster, tooling)
+- A student whose setup still isn't working
 
-### Project Mentor
+If a student can't get their computer set up for a week, that's already ~12% of work time wasted.
+
+### To Project Mentor...
 The mentor will likely escalate to the clinic director.
-- **A student is not pushing code, not attending, or not responding**
-- **Project-level struggles:** problem solving, understanding the data, direction
-- **A student is behaving unprofessionally:** immediately. This is not the TA's problem to correct.
-- **A student asks you to complete their work:** immediately
-- **A student disputes a grade**
-- **The external mentor is changing the project scope**
-- **Security issues:** Committed secrets, exposed credentials
+- A student is not pushing code, not attending, or not responding
+- Project-level struggles (problem solving, understanding the data, direction)
+- A student is behaving unprofessionally
+- A student asks you to complete their work
+- A student disputes a grade
+- The external mentor is changing the project scope
+- Security issues (committed secrets, exposed credentials)
 
 ### Pattern-Based Escalation
 - **Repeated issues:** Same problems across multiple teams

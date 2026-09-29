@@ -426,24 +426,7 @@
         </div>
     </div>
 
-    <!-- Slide 8: Claude Code Setup -->
-    <div class="slide">
-        <div class="slide-content">
-            <h2>Claude Code: Are You Set Up?</h2>
-            <div class="highlight">
-                <p>Claude Code is useful for code reviews; we've provided a <code>/clinic-pr-review</code> skill.</p>
-            </div>
-            <h3>Getting Access</h3>
-            <ul>
-                <li>The University is providing access to <strong>Claude Enterprise</strong> accounts</li>
-                <li><a href="https://intranet.uchicago.edu/tools-and-resources/tools-and-applications/claude/getting-started-with-claude" target="_blank">Instructions for activating your account</a></li>
-                <li>Then install Claude Code <a href="https://claude.com/product/claude-code" target="_blank">using these instructions</a>, either as a desktop application or as CLI</li>
-                <li><strong>Verification:</strong> Start a Claude Code session either in the desktop app or in a terminal</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Slide 9: Code Style and Structure -->
+    <!-- Slide 8: Code Style and Structure -->
     <div class="slide">
         <div class="slide-content">
             <h2>Code Style and Structure</h2>
@@ -500,7 +483,7 @@ if __name__ == "__main__":
         </div>
     </div>
 
-    <!-- Slide 10: Debugging and Testing -->
+    <!-- Slide 9: Debugging and Testing -->
     <div class="slide">
         <div class="slide-content">
             <h2>Debugging and Testing</h2>
@@ -596,7 +579,7 @@ except ValueError as e:
         </div>
     </div>
 
-    <!-- Slide 11: Docker & Make for Reproducibility -->
+    <!-- Slide 10: Docker & Make for Reproducibility -->
     <div class="slide">
         <div class="slide-content">
             <h2>Docker & Make for Reproducibility</h2>
@@ -655,7 +638,7 @@ sync:
         </div>
     </div>
 
-    <!-- Slide 12: The Role of AI Coding Agents in Clinic -->
+    <!-- Slide 11: The Role of AI Coding Agents in Clinic -->
     <div class="slide">
         <div class="slide-content">
             <h2>The Role of AI Coding Agents in Clinic</h2>
@@ -683,7 +666,7 @@ sync:
         </div>
     </div>
 
-    <!-- Slide 13: How AI Changes Code Quality -->
+    <!-- Slide 12: How AI Changes Code Quality -->
     <div class="slide">
         <div class="slide-content">
             <h2>How AI Changes Code Quality</h2>
@@ -754,7 +737,7 @@ sync:
         </div>
     </div>
 
-    <!-- Slide 14: AI-Written Text -->
+    <!-- Slide 13: AI-Written Text -->
     <div class="slide">
         <div class="slide-content">
             <h2>AI-Written Text</h2>
@@ -813,7 +796,90 @@ Open question: should a score of 0 count as valid?</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 15: Practice Exercise -->
+    <!-- Slide 14: Claude Code Setup -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Claude Code: Are You Set Up?</h2>
+            <div class="highlight">
+                <p>Claude Code is useful for code reviews; we've provided a <code>/clinic-pr-review</code> skill.</p>
+            </div>
+            <h3>Getting Access</h3>
+            <ul>
+                <li>The University is providing access to <strong>Claude Enterprise</strong> accounts</li>
+                <li><a href="https://intranet.uchicago.edu/tools-and-resources/tools-and-applications/claude/getting-started-with-claude" target="_blank">Instructions for activating your account</a></li>
+                <li>Then install Claude Code <a href="https://claude.com/product/claude-code" target="_blank">using these instructions</a>, either as a desktop application or as CLI</li>
+                <li><strong>Verification:</strong> Start a Claude Code session either in the desktop app or in a terminal</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 15: Using /clinic-pr-review -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Using <code>/clinic-pr-review</code></h2>
+            <ul>
+                <li>This skill is designed to help you conduct more effective code reviews</li>
+                <li>Installation instructions here: <a href="https://github.com/dsi-rse/skills/" target="_blank">https://github.com/dsi-rse/skills/</a></li>
+                <li>Run using <code>/clinic-pr-review</code> in the project directory</li>
+                <li>Answer questions to identify exactly what you want to review</li>
+                <li>This should help you figure out where to look and avoid missing things; it of course does not replace judgment or remove the need to read the code</li>
+                <li>If you don't find it helpful, don't use it</li>
+            </ul>
+            <div class="highlight">
+                <p><strong>This is our first time using this skill; please provide feedback!</strong> You can reach out to discuss on Slack, or you can post issues or contributions to the repo: <a href="https://github.com/dsi-rse/skills/" target="_blank">https://github.com/dsi-rse/skills/</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 16: /clinic-pr-review Checklist: Notebooks -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2><code>/clinic-pr-review</code> Checklist: Notebooks</h2>
+            <p>Do they run from a fresh clone, keep functions in modules, and have clear names?</p>
+            <div style="position: relative; max-width: 1000px; margin: 20px auto;">
+                <img src="images/clinic-pr-review-checklist.png" alt="Example /clinic-pr-review checklist with pass, fail, could not verify, and n/a verdicts and evidence for 16 items" style="width: 100%; display: block; border-radius: 8px;">
+                <div style="position: absolute; left: 0.38%; top: 8.74%; width: 88.68%; height: 17.07%; border: 3px solid #f44336; border-radius: 4px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 17: /clinic-pr-review Checklist: Code -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2><code>/clinic-pr-review</code> Checklist: Code</h2>
+            <p>Does it run in Docker, is it documented, tested, free of dead code, and free of shortcuts?</p>
+            <div style="position: relative; max-width: 1000px; margin: 20px auto;">
+                <img src="images/clinic-pr-review-checklist.png" alt="Example /clinic-pr-review checklist with pass, fail, could not verify, and n/a verdicts and evidence for 16 items" style="width: 100%; display: block; border-radius: 8px;">
+                <div style="position: absolute; left: 0.32%; top: 25.61%; width: 88.68%; height: 39.28%; border: 3px solid #f44336; border-radius: 4px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 18: /clinic-pr-review Checklist: Direction -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2><code>/clinic-pr-review</code> Checklist: Direction</h2>
+            <p>Does the PR link its issue and actually do what the task asked?</p>
+            <div style="position: relative; max-width: 1000px; margin: 20px auto;">
+                <img src="images/clinic-pr-review-checklist.png" alt="Example /clinic-pr-review checklist with pass, fail, could not verify, and n/a verdicts and evidence for 16 items" style="width: 100%; display: block; border-radius: 8px;">
+                <div style="position: absolute; left: 0%; top: 65.08%; width: 88.68%; height: 17.07%; border: 3px solid #f44336; border-radius: 4px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 19: /clinic-pr-review Checklist: Data Science -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2><code>/clinic-pr-review</code> Checklist: Data Science</h2>
+            <p>Can the results be reproduced, and is the test set kept clean?</p>
+            <div style="position: relative; max-width: 1000px; margin: 20px auto;">
+                <img src="images/clinic-pr-review-checklist.png" alt="Example /clinic-pr-review checklist with pass, fail, could not verify, and n/a verdicts and evidence for 16 items" style="width: 100%; display: block; border-radius: 8px;">
+                <div style="position: absolute; left: 0.61%; top: 81.47%; width: 88.68%; height: 17.07%; border: 3px solid #f44336; border-radius: 4px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 20: Practice Exercise -->
     <div class="slide">
         <div class="slide-content">
             <h2>Practice Time - Let's Review Code Together</h2>
@@ -851,7 +917,7 @@ Open question: should a score of 0 count as valid?</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 16: Git Workflow -->
+    <!-- Slide 21: Git Workflow -->
     <div class="slide">
         <div class="slide-content">
             <h2>Git Workflow</h2>
@@ -935,7 +1001,7 @@ git checkout jd/my-feature && git rebase main
         </div>
     </div>
 
-    <!-- Slide 17: Reviewing with /clinic-pr-review -->
+    <!-- Slide 22: Reviewing with /clinic-pr-review -->
     <div class="slide">
         <div class="slide-content">
             <h2>Reviewing with <code>/clinic-pr-review</code></h2>
@@ -978,7 +1044,7 @@ git checkout jd/my-feature && git rebase main
         </div>
     </div>
 
-    <!-- Slide 18: The Review Feedback Loop -->
+    <!-- Slide 23: The Review Feedback Loop -->
     <div class="slide">
         <div class="slide-content">
             <h2>The Review Feedback Loop</h2>
@@ -1025,7 +1091,7 @@ git checkout jd/my-feature && git rebase main
         </div>
     </div>
 
-    <!-- Slide 19: Coaching Techniques -->
+    <!-- Slide 24: Coaching Techniques -->
     <div class="slide">
         <div class="slide-content">
             <h2>Coaching Techniques</h2>
@@ -1068,7 +1134,7 @@ git checkout jd/my-feature && git rebase main
         </div>
     </div>
 
-    <!-- Slide 20: Common Review Scenarios -->
+    <!-- Slide 25: Common Review Scenarios -->
     <div class="slide">
         <div class="slide-content">
             <h2>Common Review Scenarios</h2>
@@ -1114,7 +1180,7 @@ df = pd.read_csv(data_path)</code></pre>
         </div>
     </div>
 
-    <!-- Slide 21: Beyond Code Quality -->
+    <!-- Slide 26: Beyond Code Quality -->
     <div class="slide">
         <div class="slide-content">
             <h2>Beyond Code Quality</h2>
@@ -1135,7 +1201,7 @@ df = pd.read_csv(data_path)</code></pre>
         </div>
     </div>
 
-    <!-- Slide 22: When to Escalate -->
+    <!-- Slide 27: When to Escalate -->
     <div class="slide">
         <div class="slide-content">
             <h2>When to Escalate</h2>
@@ -1177,7 +1243,7 @@ all-hands meeting?"</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 23: Next Steps -->
+    <!-- Slide 28: Next Steps -->
     <div class="slide">
         <div class="slide-content">
             <h2>Next Steps</h2>
@@ -1229,7 +1295,7 @@ all-hands meeting?"</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 24: Questions & Discussion -->
+    <!-- Slide 29: Questions & Discussion -->
     <div class="slide">
         <div class="slide-content">
             <h1>Questions & Discussion</h1>
@@ -1256,7 +1322,7 @@ all-hands meeting?"</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 25: Appendix Title -->
+    <!-- Slide 30: Appendix Title -->
     <div class="slide">
         <div class="slide-content" style="text-align: center; margin-top: 100px;">
             <h1>Appendix</h1>
@@ -1271,7 +1337,7 @@ all-hands meeting?"</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 26: Repository Hygiene -->
+    <!-- Slide 31: Repository Hygiene -->
     <div class="slide">
         <div class="slide-content">
             <h2>Repository Hygiene</h2>
@@ -1323,7 +1389,7 @@ git rebase main</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 27: Type Hints for Clarity -->
+    <!-- Slide 32: Type Hints for Clarity -->
     <div class="slide">
         <div class="slide-content">
             <h2>Type Hints for Clarity</h2>
@@ -1369,7 +1435,7 @@ calculate_average("85,90,78")  # mypy error!</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 28: Python Best Practices -->
+    <!-- Slide 33: Python Best Practices -->
     <div class="slide">
         <div class="slide-content">
             <h2>Python Best Practices</h2>
@@ -1421,7 +1487,7 @@ for i in range(3):
         </div>
     </div>
 
-    <!-- Slide 29: Data Validation with Pydantic -->
+    <!-- Slide 34: Data Validation with Pydantic -->
     <div class="slide">
         <div class="slide-content">
             <h2>Data Validation with Pydantic</h2>
@@ -1464,7 +1530,7 @@ config = PipelineConfig(**config_dict)</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 30: Configuration Management -->
+    <!-- Slide 35: Configuration Management -->
     <div class="slide">
         <div class="slide-content">
             <h2>Configuration Management</h2>
@@ -1541,7 +1607,7 @@ API_KEY=your_api_key_here</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 31: Dependencies and Environments -->
+    <!-- Slide 36: Dependencies and Environments -->
     <div class="slide">
         <div class="slide-content">
             <h2>Dependencies and Environments</h2>
@@ -1618,7 +1684,7 @@ CMD ["uv", "run", "python", "app.py"]</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 32: Separate I/O from Computation -->
+    <!-- Slide 37: Separate I/O from Computation -->
     <div class="slide">
         <div class="slide-content">
             <h2>Separate I/O from Computation</h2>
@@ -1666,7 +1732,7 @@ def main():
         </div>
     </div>
 
-    <!-- Slide 33: Logging & Specific Error Messages -->
+    <!-- Slide 38: Logging & Specific Error Messages -->
     <div class="slide">
         <div class="slide-content">
             <h2>Logging & Specific Error Messages</h2>

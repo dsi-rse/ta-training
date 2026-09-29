@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TA Technical Standards Training - Data Science Clinic</title>
+    <title>TA Training - Data Science Clinic</title>
     
     <!-- Prism.js for syntax highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
@@ -202,7 +202,7 @@
         .workflow-step::after {
             content: "→";
             position: absolute;
-            right: -15px;
+            right: -25px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 1.5em;
@@ -245,10 +245,10 @@
     <div class="slide active title-slide">
         <div class="slide-content" style="text-align: center; margin-top: 20vh;">
             <h1>UChicago Data Science Clinic</h1>
-            <h3>TA Technical Standards Training</h3>
+            <h3>TA Training</h3>
         </div>
     </div>
-    
+
     <!-- Slide 2: Training Goals -->
     <div class="slide">
         <div class="slide-content">
@@ -263,40 +263,115 @@
                 <li><strong>Equip TAs to model professional data science habits</strong>
                     <ul><li>Students learn by seeing how professionals work</li></ul>
                 </li>
+                <li><strong>Know and own the full set of TA responsibilities</strong>
+                    <ul><li>The weekly cycle, TA sessions, reviews, and escalation</li></ul>
+                </li>
             </ul>
             <div class="highlight">
                 <p><strong>Remember:</strong> We're preparing students for real data science careers, not just academic assignments.</p>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 3: Core Principles -->
+
+    <!-- Slide 3: Your Responsibilities -->
     <div class="slide">
         <div class="slide-content">
-            <h2>Core Principles</h2>
+            <h2>Your Responsibilities</h2>
+            <h3>Weeks 1-2</h3>
+            <ul>
+                <li><strong>Week 1:</strong> Verify every student's setup actually works. Set the repository structure for the quarter.</li>
+                <li><strong>Week 2:</strong> No TA sessions before the first mentor meeting. Confirm any lingering setup issues are closed out.</li>
+            </ul>
+            <h3>Throughout the Quarter</h3>
             <div class="two-column">
                 <div>
-                    <h3>Enforce, Don't Code</h3>
-                    <p>Guide students to solutions rather than fixing code yourself</p>
-                    
-                    <h3>Consistency</h3>
-                    <p>Fair standards across all projects and teams</p>
+                    <ul>
+                        <li><strong>Review student pull requests</strong> using the <code>/clinic-pr-review</code> Claude skill, then leave the review on the pull request yourself</li>
+                        <li><strong>Ensure students are pushing to GitHub</strong>, opening pull requests, and opening issues</li>
+                        <li><strong>Ensure students are not getting stuck</strong> on setup issues and technical bugs</li>
+                        <li><strong>Escalate</strong> technical issues you cannot solve to clinic staff, and other student concerns to the mentor</li>
+                        <li><strong>Post a weekly update</strong> on each project to the thread in the clinic TAs Slack channel</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3>Professionalism</h3>
-                    <p>Mirror real data science team practices</p>
-                    
-                    <h3>Escalation</h3>
-                    <p>Raise systemic issues to mentors promptly</p>
+                    <ul>
+                        <li><strong>Run two in-person TA sessions each week</strong> and attend the weekly mentor session for each project</li>
+                        <li><strong>Take attendance</strong> at each TA session and report it weekly in Canvas (5/5 on time, 3/5 up to 10 minutes late, 0 otherwise)</li>
+                        <li><strong>Act as the technical advisor</strong> on repository structure</li>
+                        <li><strong>Keep PRs moving</strong> and delete old branches. Reconciling 25 unmerged branches in week 9 is no fun.</li>
+                    </ul>
                 </div>
             </div>
+            <h3>Week 10 / Finals</h3>
+            <ul>
+                <li>Evaluate repository using the <a href="https://clinic.ds.uchicago.edu/rubrics/final-technical-cleanup.html" target="_blank">final technical cleanup</a> checklist</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: The Weekly Cycle -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>The Weekly Cycle</h2>
+            <p>Student work lives in GitHub. The cycle runs from one mentor session to the next.</p>
+            <div class="workflow-diagram">
+                <div class="workflow-step">Mentor Session<br>Tasks assigned</div>
+                <div class="workflow-step">Midnight That Day<br>Issues opened, linked in Slack</div>
+                <div class="workflow-step">Two TA Sessions<br>Reviews, debugging</div>
+                <div class="workflow-step">Midnight Day Before<br>Code in PR, status on issues</div>
+            </div>
+
             <div class="highlight">
-                <p><strong>Key Insight:</strong> Your job is to develop student capabilities, not deliver perfect code.</p>
+                <ul>
+                    <li><strong>If it isn't on GitHub, we can't see it and it counts as a 0.</strong></li>
+                    <li><strong>A task is not complete until the pull request addressing it is merged to <code>main</code>.</strong> Incomplete tasks are expected and okay (provided code is pushed).</li>
+                    <li><strong>TA sessions are where debugging happens.</strong> Mentors are instructed not to debug code during the mentor meeting, so expect that work to be your responsibility.</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>The Weekly Slack Update</h3>
+                <p>One short post per project:</p>
+                <ul>
+                    <li>Are any students not pushing code or putting work in issues?</li>
+                    <li>Are you caught up with reviews?</li>
+                    <li>Are students blocked by anything in particular?</li>
+                    <li>Anything to escalate?</li>
+                </ul>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 4: Why Standards Matter -->
+
+    <!-- Slide 5: Running a TA Session -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Running a TA Session</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Checklist</h3>
+                    <ul>
+                        <li>Take attendance</li>
+                        <li>Review the status of pull requests and reviews</li>
+                        <li>For students without active pull requests, review task status and path to completing the task this week</li>
+                        <li>Work through technical blockers</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>&nbsp;</h3>
+                    <ul>
+                        <li>Escalate any technical issue you cannot resolve to clinic staff, and any other student concern to the mentor</li>
+                        <li>Check the class schedule and Canvas for upcoming deadlines</li>
+                        <li>Enter attendance grades in Canvas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight">
+                <p><strong>Full checklist:</strong> <a href="https://clinic.ds.uchicago.edu/mentor-ta/how-to-run-a-ta-session.html" target="_blank">https://clinic.ds.uchicago.edu/mentor-ta/how-to-run-a-ta-session.html</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Why Standards Matter -->
     <div class="slide">
         <div class="slide-content">
             <h2>Why These Standards Matter</h2>
@@ -318,12 +393,12 @@
             </div>
         </div>
     </div>
-    
-    <!-- Slide 5: Key Technical Areas -->
+
+    <!-- Slide 7: Key Technical Areas -->
     <div class="slide">
         <div class="slide-content">
             <h2>Key Technical Areas</h2>
-            <div class="two-column">
+            <div class="two-column" style="font-size: 1.5em; margin-top: 60px;">
                 <div>
                     <ul>
                         <li><strong>Code Style & Structure</strong>
@@ -345,13 +420,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="highlight" style="margin-top: 30px;">
-                <p><strong>For a full list of technical standards and best practices:</strong> <a href="https://dsi-clinic.github.io/ta-training/technical/" target="_blank">https://dsi-clinic.github.io/ta-training/technical/</a></p>
+            <div class="highlight" style="margin-top: 60px; font-size: 1.3em;">
+                <p><strong>For a full list of technical standards and best practices:</strong> <a href="https://dsi-rse.github.io/ta-training/technical/" target="_blank">https://dsi-rse.github.io/ta-training/technical/</a></p>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 6: Code Style and Structure -->
+
+    <!-- Slide 8: Code Style and Structure -->
     <div class="slide">
         <div class="slide-content">
             <h2>Code Style and Structure</h2>
@@ -359,61 +434,56 @@
                 <div>
                     <h3>Poor Organization</h3>
                     <div class="code-block bad"><pre><code class="language-python">import pandas as pd
-import numpy as np
 
-def proc(d):
-    return d.groupby('cat').mean()
+df = pd.read_csv("data/survey_2023.csv")
+df2 = df[df["q7"] >= 0]
+p = len(df2[df2["q7"] >= 9]) / len(df2) * 100
+d = len(df2[df2["q7"] <= 6]) / len(df2) * 100
+print("2023:", p - d)
 
-def ld(f):
-    return pd.read_csv(f)
+df = pd.read_csv("data/survey_2024.csv")
+df2 = df[df["q7"] >= 0]
+p = len(df2[df2["q7"] >= 9]) / len(df2) * 100
+d = len(df2[df2["q7"] <= 6]) / len(df2) * 100
+print("2024:", p - d)
 
-def sv(d, f):
-    d.to_csv(f)
-
-def main():
-    d = ld('data.csv')
-    r = proc(d)
-    sv(r, 'out.csv')</code></pre></div>
+df = pd.read_csv("data/survey_2025.csv")
+df2 = df[df["q7"] >= 0]
+p = len(df2[df2["q7"] >= 9]) / len(df) * 100
+d = len(df2[df2["q7"] <= 6]) / len(df) * 100
+print("2025:", p - d)</code></pre></div>
                 </div>
                 <div>
                     <h3>Professional Structure</h3>
-                    <div class="code-block good"><pre><code class="language-python">"""Survey data analysis module."""
-from pathlib import Path
-import pandas as pd
-import logging
+                    <div class="code-block good"><pre><code class="language-python">import pandas as pd
 
-logger = logging.getLogger(__name__)
+NPS_QUESTION = "q7"   # "How likely are you to recommend us?" (0–10)
+PROMOTER_MIN = 9
+DETRACTOR_MAX = 6
 
-def load_survey_data(file_path: Path) -> pd.DataFrame:
-    """Load survey data with validation."""
-    logger.info(f"Loading survey data from {file_path}")
-    
-    if not file_path.exists():
-        raise FileNotFoundError(f"File not found: {file_path}")
-    
-    return pd.read_csv(file_path)
+def net_promoter_score(scores: pd.Series) -> float:
+    """% promoters minus % detractors, ignoring negative (missing) codes."""
+    valid = scores[scores >= 0]
+    promoters = (valid >= PROMOTER_MIN).mean()
+    detractors = (valid <= DETRACTOR_MAX).mean()
+    return 100 * (promoters - detractors)
 
-def calculate_category_averages(
-    df: pd.DataFrame, 
-    category_col: str = 'category'
-) -> pd.DataFrame:
-    """Calculate mean values grouped by category."""
-    return df.groupby(category_col).mean()
+def main(years: list[int]) -> None:
+    for year in years:
+        scores = pd.read_csv(f"data/survey_{year}.csv")[NPS_QUESTION]
+        print(f"{year}: {net_promoter_score(scores):+.1f}")
 
-def save_results(df: pd.DataFrame, output_path: Path) -> None:
-    """Save analysis results to CSV."""
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(output_path, index=False)
-    logger.info(f"Results saved to {output_path}")</code></pre></div>
+if __name__ == "__main__":
+    main([2023, 2024, 2025])</code></pre></div>
                 </div>
             </div>
             <div class="highlight">
-                <p><strong>Key Teaching Points:</strong> Good structure isn't about following rules - it's about making code maintainable and collaborative. Help students see how clear names and documentation save time for their future selves and teammates.</p>
+                <p><strong>Key Teaching Points:</strong> Good structure isn't about following rules - it's about making code maintainable and collaborative. Here the function has a reason to exist (it does a non-trivial thing), the comment is informative (it explains what "q7" is), names are better, computation is separated from I/O, and constants have been defined. Don't break a tiny script into functions that just wrap a pandas call or repeat error-checking pandas already does.</p>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 7: Debugging and Testing -->
+
+    <!-- Slide 9: Debugging and Testing -->
     <div class="slide">
         <div class="slide-content">
             <h2>Debugging and Testing</h2>
@@ -508,8 +578,8 @@ except ValueError as e:
             </div>
         </div>
     </div>
-    
-    <!-- Slide 8: Docker & Make for Reproducibility -->
+
+    <!-- Slide 10: Docker & Make for Reproducibility -->
     <div class="slide">
         <div class="slide-content">
             <h2>Docker & Make for Reproducibility</h2>
@@ -565,49 +635,289 @@ sync:
             <div class="highlight">
                 <p><strong>Key Teaching Points:</strong> Modern Python packaging with uv provides faster, more reliable dependency management. Check that projects have pyproject.toml, uv.lock is committed, and make commands use `uv run`. This workflow eliminates "works on my machine" problems.</p>
             </div>
-            
-            <!-- Docker Workflow Visual -->
-            <div style="text-align: center; margin: 30px 0;">
-                <svg width="800" height="200" viewBox="0 0 800 200">
-                    <!-- Build step -->
-                    <rect x="50" y="50" width="120" height="80" fill="rgba(128,0,0,0.1)" stroke="#800000" stroke-width="2" rx="10"/>
-                    <text x="110" y="80" fill="#333" font-size="14" text-anchor="middle">Build</text>
-                    <text x="110" y="100" fill="#333" font-size="12" text-anchor="middle">make build</text>
-                    
-                    <!-- Arrow -->
-                    <path d="M 180 90 L 220 90 M 210 80 L 220 90 L 210 100" stroke="#4caf50" stroke-width="3" fill="none"/>
-                    
-                    <!-- Run step -->
-                    <rect x="240" y="50" width="120" height="80" fill="rgba(128,0,0,0.1)" stroke="#800000" stroke-width="2" rx="10"/>
-                    <text x="300" y="80" fill="#333" font-size="14" text-anchor="middle">Run Container</text>
-                    <text x="300" y="100" fill="#333" font-size="12" text-anchor="middle">make run</text>
-                    
-                    <!-- Arrow -->
-                    <path d="M 370 90 L 410 90 M 400 80 L 410 90 L 400 100" stroke="#4caf50" stroke-width="3" fill="none"/>
-                    
-                    <!-- Reproduce step -->
-                    <rect x="430" y="50" width="120" height="80" fill="rgba(128,0,0,0.1)" stroke="#800000" stroke-width="2" rx="10"/>
-                    <text x="490" y="80" fill="#333" font-size="14" text-anchor="middle">Reproduce</text>
-                    <text x="490" y="100" fill="#333" font-size="12" text-anchor="middle">Anywhere!</text>
-                    
-                    <!-- Details below -->
-                    <text x="110" y="150" fill="#333" font-size="11" text-anchor="middle">uv manages deps</text>
-                    <text x="110" y="165" fill="#333" font-size="11" text-anchor="middle">Lock file ensures</text>
-                    <text x="110" y="180" fill="#333" font-size="11" text-anchor="middle">exact versions</text>
-                    
-                    <text x="300" y="150" fill="#333" font-size="11" text-anchor="middle">Volume mounts</text>
-                    <text x="300" y="165" fill="#333" font-size="11" text-anchor="middle">Live code updates</text>
-                    <text x="300" y="180" fill="#333" font-size="11" text-anchor="middle">Fast iteration</text>
-                    
-                    <text x="490" y="150" fill="#333" font-size="11" text-anchor="middle">Any machine</text>
-                    <text x="490" y="165" fill="#333" font-size="11" text-anchor="middle">Same results</text>
-                    <text x="490" y="180" fill="#333" font-size="11" text-anchor="middle">No "works for me"</text>
-                </svg>
+        </div>
+    </div>
+
+    <!-- Slide 11: The Role of AI Coding Agents in Clinic -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>The Role of AI Coding Agents in Clinic</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Expectations</h3>
+                    <ul>
+                        <li><strong>AI coding agents are permitted.</strong></li>
+                        <li><strong>Students have free Claude licenses</strong> and should be using Claude Code as their coding tool, unless there's a compelling reason for an exception.</li>
+                        <li><strong>Encourage students to use AI coding agents</strong>, especially on monotonous tasks that can be done much faster with AI.</li>
+                        <li><strong>Do not expect students to be good at using AI coding agents effectively.</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Common Pitfalls</h3>
+                    <ul>
+                        <li><strong>Using AI as a crutch:</strong> Proceeding through the project with poor understanding. Students should keep a very close hand on their Python code.</li>
+                        <li><strong>Accepting output without understanding it:</strong> It's dangerous to run commands without having some idea of what they do. Claude is AI and can make mistakes.</li>
+                        <li><strong>Letting the agent own version control:</strong> Students need to own git as a check on AI.</li>
+                        <li><strong>Piling on code:</strong> AI is too willing to pile on more code (next slide).</li>
+                        <li><strong>AI-written reports:</strong> Weekly reports must be written entirely by the student.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Slide 12: How AI Changes Code Quality -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>How AI Changes Code Quality</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Excessively Verbose</h3>
+                    <div class="code-block bad"><pre><code class="language-python">def load_and_clean_survey_data(
+    file_path: str | Path,
+    required_columns: list[str] | None = None,
+    drop_duplicates: bool = True,
+    verbose: bool = False,
+) -> pd.DataFrame | None:
+    """Load, validate, and clean survey data robustly."""
+    try:
+        path = Path(file_path)
+        if not path.exists():
+            logger.warning(f"File not found: {path}")
+            return None
+        df = pd.read_csv(path)
+    except Exception as e:
+        logger.error(f"Failed to load data: {e}")
+        return None
+
+    if required_columns is None:
+        required_columns = ["user_id", "score"]
+    for col in required_columns:
+        if col not in df.columns:
+            logger.warning(f"Missing column: {col}")
+
+    if drop_duplicates:
+        df = df.drop_duplicates()
+
+    try:
+        df["score"] = pd.to_numeric(df["score"], errors="coerce")
+    except Exception:
+        pass
+
+    df = df[df["score"] > 0]
+    if verbose:
+        print(f"✅ Loaded {len(df)} rows")
+    return df</code></pre></div>
+                </div>
+                <div>
+                    <h3>Easy to Read</h3>
+                    <div class="code-block good"><pre><code class="language-python">def load_valid_responses(path: Path) -> pd.DataFrame:
+    """Load survey responses with a positive score."""
+    df = pd.read_csv(path, usecols=["user_id", "score"])
+    return df[df["score"] > 0]</code></pre></div>
+
+                    <h3>What's Changed</h3>
+                    <ul>
+                        <li><strong>AI writes good style at a line-level.</strong> But it's too willing to pile on more code.</li>
+                        <li><strong>It builds up:</strong> Each coding agent session adds more code, and the agent is usually unwilling to make big changes to the previous code</li>
+                        <li><strong>Hidden failures:</strong> Broad <code>try/except</code> and <code>return None</code> turn clear errors into silent bad data</li>
+                        <li><strong>Options no one asked for:</strong> Parameters and branches the project never uses</li>
+                    </ul>
+
+                    <h3>Prompts Students Should Use</h3>
+                    <ul>
+                        <li>"Run pre-commit and fix all errors."</li>
+                        <li>"Without changing any functionality, simplify it and remove anything unnecessary."</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight">
+                <p><strong>Key Teaching Points:</strong> Linters handle line-level style now. Spend your review on size and purpose: Is this the least code necessary? Can the student say why each piece exists? Does it fail loudly when something is wrong? Students must request general clean-ups periodically.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: AI-Written Text -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>AI-Written Text</h2>
+            <p>PR descriptions, READMEs, issue comments, and notebook markdown are read by humans. Be merciless: expect them to be short, clear, and readable.</p>
+            <div class="two-column">
+                <div>
+                    <h3>AI-Style PR Description</h3>
+                    <div class="code-block bad"><pre><code class="language-markdown">## Summary
+This PR introduces a comprehensive, robust, and
+scalable data cleaning pipeline that significantly
+enhances the overall quality and reliability of
+our survey analysis workflow.
+
+## Key Features
+- **Robust Data Cleaning**: Implements
+  comprehensive validation to ensure...
+- **Enhanced Logging**: Provides detailed
+  insights into every stage of...
+- **Error Handling**: Gracefully handles
+  a wide range of edge cases...
+
+## Rough edges worth knowing
+- Score coercion is load-bearing here — bad
+  values become NaN and quietly drop out.
+
+## Testing
+All functionality has been thoroughly tested
+to ensure correctness and robustness.</code></pre></div>
+                </div>
+                <div>
+                    <h3>Clear PR Description</h3>
+                    <div class="code-block good"><pre><code class="language-markdown">Closes #12.
+
+Adds `load_valid_responses()` in `src/survey/load.py`.
+It drops rows with non-positive scores (about 4% of
+the partner's file).
+
+To check: `make test`, then `make run-pipeline`.
+Output is `output/dept_averages.csv`.
+
+Open question: should a score of 0 count as valid?</code></pre></div>
+
+                    <h3>What to Look For</h3>
+                    <ul>
+                        <li><strong>Walls of text:</strong> Long, generic prose that says little</li>
+                        <li><strong>Dense, jargon-heavy phrasing:</strong> "load-bearing," "rough edges worth knowing," em-dashes everywhere (see <a href="https://github.com/gvzdv/claudish-to-english" target="_blank">"Claudish"</a>)</li>
+                        <li><strong>Headers and bold everywhere:</strong> The giant block of markdown gets in the way of the more-important human comments</li>
+                        <li><strong>Pasted Claude output:</strong> If it must be included, hide it in <code>&lt;details&gt;</code></li>
+                        <li><strong>Notebooks and READMEs:</strong> Hard to follow, or describe things the code doesn't do</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight">
+                <p><strong>Key Teaching Points:</strong> Hold text to the same standard as code. Request changes on a PR description, README, or notebook just as you would on bad code. Weekly reports must be written entirely by the student.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: Claude Code Setup -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Claude Code: Are You Set Up?</h2>
+            <div class="highlight">
+                <p>Claude Code is useful for code reviews; we've provided a <code>/clinic-pr-review</code> skill.</p>
+            </div>
+            <h3>Getting Access</h3>
+            <ul>
+                <li>The University is providing access to <strong>Claude Enterprise</strong> accounts</li>
+                <li><a href="https://intranet.uchicago.edu/tools-and-resources/tools-and-applications/claude/getting-started-with-claude" target="_blank">Instructions for activating your account</a></li>
+                <li>Then install Claude Code <a href="https://claude.com/product/claude-code" target="_blank">using these instructions</a>, either as a desktop application or as CLI</li>
+                <li><strong>Verification:</strong> Start a Claude Code session either in the desktop app or in a terminal</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 15: Using /clinic-pr-review -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Using <code>/clinic-pr-review</code></h2>
+            <ul>
+                <li>This skill is designed to help you conduct more effective code reviews</li>
+                <li>Installation instructions here: <a href="https://github.com/dsi-rse/skills/" target="_blank">https://github.com/dsi-rse/skills/</a></li>
+                <li>Run using <code>/clinic-pr-review</code> in the project directory</li>
+                <li>Answer questions to identify exactly what you want to review</li>
+                <li>This should help you figure out where to look and avoid missing things; it of course does not replace judgment or remove the need to read the code</li>
+                <li>If you don't find it helpful, don't use it</li>
+            </ul>
+            <div class="highlight">
+                <p><strong>This is our first time using this skill; please provide feedback!</strong> You can reach out to discuss on Slack, or you can post issues or contributions to the repo: <a href="https://github.com/dsi-rse/skills/" target="_blank">https://github.com/dsi-rse/skills/</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 16: /clinic-pr-review Checklist: Notebooks -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2><code>/clinic-pr-review</code> Checklist: Notebooks</h2>
+            <p>Do they run from a fresh clone, keep functions in modules, and have clear names?</p>
+            <div style="position: relative; max-width: 1000px; margin: 20px auto;">
+                <img src="images/clinic-pr-review-checklist.png" alt="Example /clinic-pr-review checklist with pass, fail, could not verify, and n/a verdicts and evidence for 16 items" style="width: 100%; display: block; border-radius: 8px;">
+                <div style="position: absolute; left: 0.38%; top: 8.74%; width: 88.68%; height: 17.07%; border: 3px solid #f44336; border-radius: 4px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 17: /clinic-pr-review Checklist: Code -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2><code>/clinic-pr-review</code> Checklist: Code</h2>
+            <p>Does it run in Docker, is it documented, tested, free of dead code, and free of shortcuts?</p>
+            <div style="position: relative; max-width: 1000px; margin: 20px auto;">
+                <img src="images/clinic-pr-review-checklist.png" alt="Example /clinic-pr-review checklist with pass, fail, could not verify, and n/a verdicts and evidence for 16 items" style="width: 100%; display: block; border-radius: 8px;">
+                <div style="position: absolute; left: 0.32%; top: 25.61%; width: 88.68%; height: 39.28%; border: 3px solid #f44336; border-radius: 4px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 18: /clinic-pr-review Checklist: Direction -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2><code>/clinic-pr-review</code> Checklist: Direction</h2>
+            <p>Does the PR link its issue and actually do what the task asked?</p>
+            <div style="position: relative; max-width: 1000px; margin: 20px auto;">
+                <img src="images/clinic-pr-review-checklist.png" alt="Example /clinic-pr-review checklist with pass, fail, could not verify, and n/a verdicts and evidence for 16 items" style="width: 100%; display: block; border-radius: 8px;">
+                <div style="position: absolute; left: 0%; top: 65.08%; width: 88.68%; height: 17.07%; border: 3px solid #f44336; border-radius: 4px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 19: /clinic-pr-review Checklist: Data Science -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2><code>/clinic-pr-review</code> Checklist: Data Science</h2>
+            <p>Can the results be reproduced, and is the test set kept clean?</p>
+            <div style="position: relative; max-width: 1000px; margin: 20px auto;">
+                <img src="images/clinic-pr-review-checklist.png" alt="Example /clinic-pr-review checklist with pass, fail, could not verify, and n/a verdicts and evidence for 16 items" style="width: 100%; display: block; border-radius: 8px;">
+                <div style="position: absolute; left: 0.61%; top: 81.47%; width: 88.68%; height: 17.07%; border: 3px solid #f44336; border-radius: 4px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 20: Practice Exercise -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Practice Time - Let's Review Code Together</h2>
+            
+            <div class="code-block"><pre><code class="language-python">def process_survey_data():
+    data = pd.read_csv('/Users/alice/Documents/clinic/survey_data.csv')
     
-    <!-- Slide 9: Git Workflow -->
+    print("Data loaded successfully!")
+    
+    # Remove invalid responses
+    clean_data = data[data['satisfaction_score'] > 0]
+    
+    # Calculate statistics  
+    avg = clean_data['satisfaction_score'].mean()
+    dept_stats = clean_data.groupby('department')['satisfaction_score'].mean()
+    
+    # Save results
+    results = {'overall_avg': avg, 'dept_averages': dept_stats.to_dict()}
+    
+    with open('analysis_results.json', 'w') as f:
+        json.dump(results, f)
+    
+    print(f"Analysis complete! Average satisfaction: {avg}")
+    return results</code></pre></div>
+            
+            <div class="highlight">
+                <h3>Discussion Questions</h3>
+                <ul>
+                    <li>What specific issues do you see?</li>
+                    <li>How would you prioritize your feedback?</li>
+                    <li>What questions would you ask the student?</li>
+                    <li>How could this code be improved incrementally?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 21: Git Workflow -->
     <div class="slide">
         <div class="slide-content">
             <h2>Git Workflow</h2>
@@ -690,8 +1000,51 @@ git checkout jd/my-feature && git rebase main
             </div>
         </div>
     </div>
-    
-    <!-- Slide 10: The Review Feedback Loop -->
+
+    <!-- Slide 22: Reviewing with /clinic-pr-review -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Reviewing with <code>/clinic-pr-review</code></h2>
+            <div class="workflow-diagram">
+                <div class="workflow-step">Run the Skill<br>On the student's PR</div>
+                <div class="workflow-step">Verify Findings<br>Check each one yourself</div>
+                <div class="workflow-step">Write Your Review<br>Short, specific, human</div>
+                <div class="workflow-step">Follow Up<br>Did the student respond?</div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>What It Does</h3>
+                    <ul>
+                        <li>Runs the code and checks it against clinic standards</li>
+                        <li>Installed from <a href="https://github.com/dsi-rse/skills" target="_blank">dsi-rse/skills</a> (coming soon)</li>
+                        <li>Just ask Claude: "Please install the 'clinic-pr-review' skill globally from https://github.com/dsi-rse/skills/"</li>
+                    </ul>
+                    <h3>What It Doesn't Do</h3>
+                    <ul>
+                        <li><strong>Replace you.</strong> The skill is meant to assist you in reviewing the code, not to replace you.</li>
+                        <li>Know what the project actually needs, or whether the student understands their code</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Posting the Review</h3>
+                    <ul>
+                        <li><strong>Leave the review on the pull request yourself</strong></li>
+                        <li><strong>Don't paste the skill's output:</strong> a Claude report is usually too detailed, and the giant block of markdown gets in the way of the more-important human comments</li>
+                        <li><strong>Pick what matters:</strong> A few specific comments beat twenty generated ones</li>
+                        <li><strong>If you include Claude output,</strong> hide it in <code>&lt;details&gt; … &lt;/details&gt;</code></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight">
+                <p><strong>Use it if and when you find it useful.</strong> Sometimes a manual review without Claude assistance may be easier.</p>
+            </div>
+            <div class="highlight">
+                <p><strong>Key Teaching Points:</strong> Hold your own reviews to the standard you hold students to. If you wouldn't accept a wall of AI text in a student's PR, don't post one in your review.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 23: The Review Feedback Loop -->
     <div class="slide">
         <div class="slide-content">
             <h2>The Review Feedback Loop</h2>
@@ -730,10 +1083,15 @@ git checkout jd/my-feature && git rebase main
                     </ul>
                 </div>
             </div>
+            
+            <div class="highlight">
+                <h3>Exception: Vibecoded UIs</h3>
+                <p>If students build a UI for any reason (e.g., a data dashboard), they can take more of a "vibecoding" approach. The code does not need to be reviewed line-for-line, but <strong>the PR should say it was vibecoded</strong>.</p>
+            </div>
         </div>
     </div>
-    
-    <!-- Slide 11: Coaching Techniques -->
+
+    <!-- Slide 24: Coaching Techniques -->
     <div class="slide">
         <div class="slide-content">
             <h2>Coaching Techniques</h2>
@@ -749,6 +1107,7 @@ git checkout jd/my-feature && git rebase main
                     <h3>Encourage Small PRs</h3>
                     <ul>
                         <li>200-400 lines max</li>
+                        <li>AI makes PRs grow fast - push back on size</li>
                         <li>One feature at a time</li>
                         <li>Easier to review and learn from</li>
                     </ul>
@@ -770,12 +1129,12 @@ git checkout jd/my-feature && git rebase main
                 </div>
             </div>
             <div class="highlight" style="margin-top: 30px;">
-                <p><strong>For more code review guidelines and best practices:</strong> <a href="https://dsi-clinic.github.io/ta-training/technical/code-review.html" target="_blank">https://dsi-clinic.github.io/ta-training/technical/code-review.html</a></p>
+                <p><strong>For more code review guidelines and best practices:</strong> <a href="https://dsi-rse.github.io/ta-training/technical/code-review.html" target="_blank">https://dsi-rse.github.io/ta-training/technical/code-review.html</a></p>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 12: Common Review Scenarios -->
+
+    <!-- Slide 25: Common Review Scenarios -->
     <div class="slide">
         <div class="slide-content">
             <h2>Common Review Scenarios</h2>
@@ -789,6 +1148,8 @@ git checkout jd/my-feature && git rebase main
                         <li><strong>Giant files:</strong> 500+ lines in one script</li>
                         <li><strong>No type hints:</strong> Unclear parameter expectations</li>
                         <li><strong>Secrets in code:</strong> API keys, passwords</li>
+                        <li><strong>Data in git:</strong> GitHub refuses files larger than 100 MB. Consider 10 MB a hard upper limit and 1 MB a soft upper limit. Data belongs in Box.</li>
+                        <li><strong>Walls of AI text:</strong> Long PR descriptions, READMEs, and notebook markdown</li>
                     </ul>
                 </div>
                 <div>
@@ -804,57 +1165,71 @@ git checkout jd/my-feature && git rebase main
             
             <div class="highlight">
                 <h3>Sample Review Comment</h3>
-                <div class="code-block"><pre><code class=""># Instead of: "Fix the paths"
-# Try: 
-
-"I notice this hardcoded path might break on other machines:
-`df = pd.read_csv('/Users/alice/project/data.csv')`
-
-Could we use a relative path instead? Something like:
-`from pathlib import Path`
-`data_path = Path(__file__).parent / 'data' / 'survey.csv'`
-`df = pd.read_csv(data_path)`
-
-This way anyone can run your code."</code></pre></div>
+                <p><strong>Instead of:</strong> "Fix the paths"</p>
+                <p><strong>Try:</strong></p>
+                <div class="code-block good" style="font-family: inherit;">
+                    <p>I notice this hardcoded path might break on other machines:</p>
+                    <pre><code class="language-python">df = pd.read_csv('/Users/alice/project/data.csv')</code></pre>
+                    <p style="margin-top: 15px;">Could we use a relative path instead? Something like:</p>
+                    <pre><code class="language-python">from pathlib import Path
+data_path = Path(__file__).parent / 'data' / 'survey.csv'
+df = pd.read_csv(data_path)</code></pre>
+                    <p style="margin-top: 15px;">This way anyone can run your code.</p>
+                </div>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 13: When to Escalate -->
+
+    <!-- Slide 26: Beyond Code Quality -->
     <div class="slide">
         <div class="slide-content">
-            <h2>When to Escalate to Mentors</h2>
+            <h2>Beyond Code Quality</h2>
+            <p>Some of the hardest problems you'll see in a TA session aren't about code at all.</p>
+            <h3>Some Common Issues</h3>
+            <ul>
+                <li><strong>Doesn't understand the data:</strong> Can't say what a row is, or what the target variable means</li>
+                <li><strong>Stuck on what to do next:</strong> Can't break the task into steps</li>
+                <li><strong>The same task gets repeated over and over</strong></li>
+                <li><strong>Work is diverging from the intention</strong></li>
+                <li><strong>Failure to normalize or contextualize data</strong></li>
+                <li><strong>Testing on the training set</strong></li>
+                <li><strong>Claims the student cannot explain</strong></li>
+            </ul>
+            <div class="highlight">
+                <p><strong>Key Teaching Points:</strong> Help with these issues when possible, but it can be difficult as a TA to gain a deep understanding of the data and other elements of the content. If students are struggling with these issues, notify the mentor and technical advisor.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 27: When to Escalate -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>When to Escalate</h2>
+            <p>Most projects fail slowly and quietly. Escalate early rather than absorbing the problem yourself.</p>
             <div class="two-column">
                 <div>
-                    <h3>Immediate Escalation</h3>
+                    <h3>To Technical Advisor...</h3>
+                    <p>Via the mentor-TA Slack channel.</p>
                     <ul>
-                        <li><strong>Security issues:</strong> Committed secrets, exposed credentials</li>
-                        <li><strong>Plagiarism concerns:</strong> Taking credit for someone else's work without attribution</li>
-                        <li><strong>Scope creep:</strong> Project requirements changing significantly</li>
-                        <li><strong>Team conflicts:</strong> Students not collaborating effectively</li>
+                        <li>A technical problem you cannot solve (environment, Docker, cluster, tooling)</li>
+                        <li>A student whose setup still isn't working</li>
                     </ul>
+                    <p>If a student can't get their computer set up for a week, that's already ~12% of work time wasted.</p>
                 </div>
                 <div>
-                    <h3>Pattern-Based Escalation</h3>
+                    <h3>To Project Mentor...</h3>
+                    <p>The mentor will likely escalate to the clinic director.</p>
                     <ul>
-                        <li><strong>Repeated issues:</strong> Same problems across multiple teams</li>
-                        <li><strong>Systematic gaps:</strong> Everyone struggling with the same concept</li>
-                        <li><strong>Resource constraints:</strong> Students need tools/access they don't have</li>
-                        <li><strong>Timeline concerns:</strong> Teams consistently behind schedule</li>
+                        <li>A student is not pushing code, not attending, or not responding</li>
+                        <li>Project-level struggles (problem solving, understanding the data, direction)</li>
+                        <li>A student is behaving unprofessionally</li>
+                        <li>A student asks you to complete their work</li>
+                        <li>A student disputes a grade</li>
+                        <li>The external mentor is changing the project scope</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="highlight">
-                <h3>How to Escalate Effectively</h3>
-                <ul>
-                    <li><strong>Document the issue:</strong> Screenshots, links, specific examples</li>
-                    <li><strong>Suggest solutions:</strong> Don't just raise problems, propose fixes</li>
-                    <li><strong>Note broader impact:</strong> How many students/teams affected?</li>
-                    <li><strong>Timeline urgency:</strong> Does this need immediate attention?</li>
-                </ul>
-            </div>
-            
+
             <div class="code-block"><pre><code class="language-text"># Good escalation message:
 "I've noticed 3 teams this week struggling with Docker setup on Windows machines. 
 They're getting permission errors when mounting volumes. This is blocking their 
@@ -867,46 +1242,8 @@ This affects ~40% of our current cohort. Can we address this in Friday's
 all-hands meeting?"</code></pre></div>
         </div>
     </div>
-    
-    <!-- Slide 14: Practice Exercise -->
-    <div class="slide">
-        <div class="slide-content">
-            <h2>Practice Time - Let's Review Code Together</h2>
-            
-            <div class="code-block"><pre><code class="language-python">def process_survey_data():
-    data = pd.read_csv('/Users/alice/Documents/clinic/survey_data.csv')
-    
-    print("Data loaded successfully!")
-    
-    # Remove invalid responses
-    clean_data = data[data['satisfaction_score'] > 0]
-    
-    # Calculate statistics  
-    avg = clean_data['satisfaction_score'].mean()
-    dept_stats = clean_data.groupby('department')['satisfaction_score'].mean()
-    
-    # Save results
-    results = {'overall_avg': avg, 'dept_averages': dept_stats.to_dict()}
-    
-    with open('analysis_results.json', 'w') as f:
-        json.dump(results, f)
-    
-    print(f"Analysis complete! Average satisfaction: {avg}")
-    return results</code></pre></div>
-            
-            <div class="highlight">
-                <h3>Discussion Questions</h3>
-                <ul>
-                    <li>What specific issues do you see?</li>
-                    <li>How would you prioritize your feedback?</li>
-                    <li>What questions would you ask the student?</li>
-                    <li>How could this code be improved incrementally?</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Slide 15: Next Steps -->
+
+    <!-- Slide 28: Next Steps -->
     <div class="slide">
         <div class="slide-content">
             <h2>Next Steps</h2>
@@ -939,12 +1276,16 @@ all-hands meeting?"</code></pre></div>
                     
                     <h3>Communicate Regularly</h3>
                     <ul>
-                        <li>Weekly TA check-ins</li>
+                        <li>Weekly Slack update for each project</li>
                         <li>Share challenging scenarios</li>
                         <li>Escalate patterns promptly</li>
                         <li>Contribute to handbook improvements</li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="highlight">
+                <p><strong>TA expectations, TA session checklist, and escalation:</strong> <a href="https://clinic.ds.uchicago.edu/mentor-ta/" target="_blank">https://clinic.ds.uchicago.edu/mentor-ta/</a></p>
             </div>
             
             <div class="highlight">
@@ -953,8 +1294,8 @@ all-hands meeting?"</code></pre></div>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 16: Questions & Discussion -->
+
+    <!-- Slide 29: Questions & Discussion -->
     <div class="slide">
         <div class="slide-content">
             <h1>Questions & Discussion</h1>
@@ -980,8 +1321,8 @@ all-hands meeting?"</code></pre></div>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 17: Appendix Title -->
+
+    <!-- Slide 30: Appendix Title -->
     <div class="slide">
         <div class="slide-content" style="text-align: center; margin-top: 100px;">
             <h1>Appendix</h1>
@@ -990,69 +1331,13 @@ all-hands meeting?"</code></pre></div>
                 <h3>Critical topics for effective student coaching</h3>
                 <div class="highlight" style="margin-top: 40px;">
                     <p>These slides cover essential topics for TAs working with students. Use them as reference during code reviews and student interactions.</p>
-                    <p><strong>Topics covered:</strong> AI usage guidelines, repository hygiene, type hints, Python best practices, Pydantic validation, configuration management, dependency management, I/O separation patterns, and logging & error messages.</p>
+                    <p><strong>Topics covered:</strong> Repository hygiene, type hints, Python best practices, Pydantic validation, configuration management, dependency management, I/O separation patterns, and logging & error messages.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Slide 18: AI Usage Guidelines -->
-    <div class="slide">
-        <div class="slide-content">
-            <h2>AI Usage Guidelines</h2>
-            <div class="two-column">
-                <div>
-                    <h3>Appropriate AI Use</h3>
-                    <ul>
-                        <li><strong>Learning & Understanding:</strong> Explain concepts, debug errors</li>
-                        <li><strong>Code Review:</strong> Generate test cases, suggest improvements</li>
-                        <li><strong>Documentation:</strong> Help write clear docstrings and comments</li>
-                        <li><strong>Problem-Solving:</strong> Brainstorm approaches, not solutions</li>
-                    </ul>
-                    
-                    <h3>Detecting AI-Generated Code</h3>
-                    <ul>
-                        <li><strong>Overly generic:</strong> Perfect but lacks project context</li>
-                        <li><strong>Unnecessary complexity:</strong> Over-engineered for simple tasks</li>
-                        <li><strong>Missing project specifics:</strong> No hardcoded paths or project structure</li>
-                        <li><strong>Inconsistent style:</strong> Doesn't match student's usual patterns</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Inappropriate AI Use</h3>
-                    <ul>
-                        <li><strong>Complete solutions:</strong> Copy-pasting entire functions/scripts</li>
-                        <li><strong>Without understanding:</strong> Can't explain the code</li>
-                        <li><strong>No attribution:</strong> Presenting AI work as original</li>
-                    </ul>
-                    
-                    <h3>How to Address AI Usage</h3>
-                    <ul>
-                        <li><strong>Ask questions:</strong> "Can you walk me through this logic?"</li>
-                        <li><strong>Request explanation:</strong> "Help me understand this approach"</li>
-                        <li><strong>Focus on learning:</strong> "Let's trace through this together"</li>
-                        <li><strong>Encourage attribution:</strong> "Did you use any AI assistance here?"</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="highlight">
-                <h3>Escalation Guidelines</h3>
-                <ul>
-                    <li><strong>Immediate escalation:</strong> Clear evidence of AI-generated solutions for graded work</li>
-                    <li><strong>Pattern escalation:</strong> Consistent use of AI without understanding across multiple submissions</li>
-                    <li><strong>Documentation:</strong> Save examples, note inability to explain code, record conversation</li>
-                    <li><strong>Educational approach:</strong> Focus on learning outcomes rather than punishment</li>
-                </ul>
-            </div>
-            
-            <div class="highlight">
-                <p><strong>Key Teaching Points:</strong> AI is a tool for learning, not a shortcut to avoid understanding. Help students use AI responsibly by focusing on comprehension and attribution. The goal is building skills, not just producing code.</p>
             </div>
         </div>
     </div>
 
-    <!-- Slide 19: Repository Hygiene -->
+    <!-- Slide 31: Repository Hygiene -->
     <div class="slide">
         <div class="slide-content">
             <h2>Repository Hygiene</h2>
@@ -1060,18 +1345,18 @@ all-hands meeting?"</code></pre></div>
                 <div>
                     <h3>Code Debt Management</h3>
                     <ul>
+                        <li><strong>Set the repo structure in week 1:</strong> Once branches pile up mid-quarter, reconciliation is expensive</li>
                         <li><strong>Address review comments promptly:</strong> Don't let PRs sit for weeks</li>
-                        <li><strong>Close completed PRs:</strong> Merge or close within 1-2 weeks</li>
                         <li><strong>Clean up branches:</strong> Delete merged feature branches</li>
                         <li><strong>Regular maintenance:</strong> Weekly time for technical debt</li>
                     </ul>
-                    
-                    <h3>Time Allocation</h3>
+
+                    <h3>Review Timing</h3>
                     <ul>
-                        <li><strong>20-30% of time</strong> responding to code review feedback</li>
-                        <li><strong>3-5 day response time</strong> for review comments</li>
+                        <li><strong>Pushed every week:</strong> Code must be pushed each week, but it doesn't have to be merged that same week</li>
+                        <li><strong>Review cycle complete by the following week</strong> at the latest</li>
+                        <li><strong>Tighter cycles for more changes:</strong> The more changes you request, the more important a tight review cycle becomes</li>
                         <li><strong>Maximum 2-3 open PRs</strong> per student</li>
-                        <li><strong>Batch similar changes</strong> into single commits</li>
                     </ul>
                 </div>
                 <div>
@@ -1104,7 +1389,7 @@ git rebase main</code></pre></div>
         </div>
     </div>
 
-    <!-- Slide 20: Type Hints for Clarity -->
+    <!-- Slide 32: Type Hints for Clarity -->
     <div class="slide">
         <div class="slide-content">
             <h2>Type Hints for Clarity</h2>
@@ -1130,13 +1415,13 @@ calculate_average("85,90,78")  # TypeError!</code></pre></div>
                     <div class="code-block good"><pre><code class="language-python">def process_survey_data(
     data: pd.DataFrame, 
     config: AnalysisConfig
-) -> Dict[str, float]:
+) -> dict[str, float]:
     """Process survey data and return statistics."""
     result = analyze(data, config)
     return result</code></pre></div>
                     
                     <h3>Early Detection</h3>
-                    <div class="code-block good"><pre><code class="language-python">def calculate_average(scores: List[float]) -> float:
+                    <div class="code-block good"><pre><code class="language-python">def calculate_average(scores: list[float]) -> float:
     """Calculate mean of numeric scores."""
     return sum(scores) / len(scores)
 
@@ -1149,8 +1434,8 @@ calculate_average("85,90,78")  # mypy error!</code></pre></div>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 21: Python Best Practices -->
+
+    <!-- Slide 33: Python Best Practices -->
     <div class="slide">
         <div class="slide-content">
             <h2>Python Best Practices</h2>
@@ -1201,8 +1486,8 @@ for i in range(3):
             </div>
         </div>
     </div>
-    
-    <!-- Slide 22: Data Validation with Pydantic -->
+
+    <!-- Slide 34: Data Validation with Pydantic -->
     <div class="slide">
         <div class="slide-content">
             <h2>Data Validation with Pydantic</h2>
@@ -1221,15 +1506,16 @@ for i in range(3):
                 </div>
                 <div>
                     <h3>With Pydantic</h3>
-                    <div class="code-block good"><pre><code class="language-python">from pydantic import BaseModel, Field
+                    <div class="code-block good"><pre><code class="language-python">from pydantic import BaseModel, Field, field_validator
 
 class PipelineConfig(BaseModel):
     database_url: str = Field(..., min_length=1)
     max_workers: int = Field(default=2, ge=1, le=16)
     debug_mode: bool = Field(default=False)
     
-    @validator('database_url')
-    def validate_db_url(cls, v):
+    @field_validator('database_url')
+    @classmethod
+    def validate_db_url(cls, v: str) -> str:
         if not v.startswith(('postgresql://', 'sqlite://')):
             raise ValueError('Invalid database URL')
         return v
@@ -1243,8 +1529,8 @@ config = PipelineConfig(**config_dict)</code></pre></div>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 23: Configuration Management -->
+
+    <!-- Slide 35: Configuration Management -->
     <div class="slide">
         <div class="slide-content">
             <h2>Configuration Management</h2>
@@ -1275,11 +1561,14 @@ API_KEY=sk-1234567890abcdef</code></pre></div>
                 </div>
                 <div>
                     <h3>Pydantic Settings Class</h3>
-                    <div class="code-block good"><pre><code class="language-python">from pydantic_settings import BaseSettings
-from pathlib import Path
+                    <div class="code-block good"><pre><code class="language-python">from pathlib import Path
+from pydantic import Field, field_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class AnalysisConfig(BaseSettings):
     """Centralized configuration with validation."""
+    
+    model_config = SettingsConfigDict(env_file=".env")
     
     # Data paths with validation
     data_path: Path = Field(..., description="Path to survey data")
@@ -1293,14 +1582,12 @@ class AnalysisConfig(BaseSettings):
     database_url: str = Field(..., description="Database connection string")
     api_key: str = Field(..., description="External API key")
     
-    @validator('data_path')
-    def validate_data_path(cls, v):
+    @field_validator('data_path')
+    @classmethod
+    def validate_data_path(cls, v: Path) -> Path:
         if not v.exists():
             raise ValueError(f"Data file not found: {v}")
         return v
-    
-    class Config:
-        env_file = ".env"
 
 # Usage with automatic validation
 config = AnalysisConfig()</code></pre></div>
@@ -1319,8 +1606,8 @@ API_KEY=your_api_key_here</code></pre></div>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 24: Dependencies and Environments -->
+
+    <!-- Slide 36: Dependencies and Environments -->
     <div class="slide">
         <div class="slide-content">
             <h2>Dependencies and Environments</h2>
@@ -1396,8 +1683,8 @@ CMD ["uv", "run", "python", "app.py"]</code></pre></div>
             </div>
         </div>
     </div>
-    
-    <!-- Slide 25: Separate I/O from Computation -->
+
+    <!-- Slide 37: Separate I/O from Computation -->
     <div class="slide">
         <div class="slide-content">
             <h2>Separate I/O from Computation</h2>
@@ -1421,7 +1708,7 @@ CMD ["uv", "run", "python", "app.py"]</code></pre></div>
                     <h3>Separated</h3>
                     <div class="code-block good"><pre><code class="language-python">def calculate_satisfaction_stats(
     df: pd.DataFrame
-) -> Dict[str, float]:
+) -> dict[str, float]:
     """Pure function - easy to test."""
     return {
         'avg_score': df['satisfaction'].mean(),
@@ -1444,8 +1731,8 @@ def main():
             </div>
         </div>
     </div>
-    
-    <!-- Slide 26: Logging & Specific Error Messages -->
+
+    <!-- Slide 38: Logging & Specific Error Messages -->
     <div class="slide">
         <div class="slide-content">
             <h2>Logging & Specific Error Messages</h2>

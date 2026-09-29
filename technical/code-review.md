@@ -10,6 +10,19 @@
 - Author checklist before request: tests pass, self-review, docs updated.
 - Reviewer checklist: see below.
 
+## Reviewing with `/clinic-pr-review`
+
+Review student pull requests using the `/clinic-pr-review` Claude skill. The skill runs the code and checks it against clinic standards. Review the skill's output, verify its findings, and leave the review on the pull request yourself. The skill is meant to assist you in reviewing the code, not to replace you.
+
+1. **Run the skill** on the student's PR. It will be installed from [dsi-rse/skills](https://github.com/dsi-rse/skills).
+2. **Verify findings:** check each one yourself.
+3. **Write your review:** short, specific, human.
+4. **Follow up:** check that the student responded to your previous review comments.
+
+Don't paste the skill's output into the PR. A Claude report is usually too detailed, and the giant block of markdown gets in the way of the more-important human comments. If you include Claude output, hide it in `<details> … </details>`.
+
+Use the skill if and when you find it useful. Sometimes a manual review without Claude assistance may be easier.
+
 ## Core Review Principles
 
 ### Enforce, Don't Code
@@ -34,11 +47,14 @@
 - **API:** Clear function names, types, docstrings.
 - **Giant files:** Flag scripts over 500 lines for refactoring
 - **Function clarity:** Avoid unclear names like `process()`, `calc()`
+- **Too much code:** Is this the least code necessary? AI is too willing to pile on more code.
+- **Options no one asked for:** Parameters and branches the project never uses
 
 ### Data and Error Handling
 - **Data correctness:** Validates inputs, handles edge cases.
 - **Error messages:** Specific, actionable messages vs. generic exceptions
 - **Missing columns:** Check for proper validation of required data fields
+- **Hidden failures:** Broad `try/except` and `return None` that turn clear errors into silent bad data
 
 ### Code Organization
 - **I/O separation:** Computation vs file/network operations separated
@@ -49,6 +65,8 @@
 - **Reproducibility:** Docker builds work, `uv.lock` committed when `pyproject.toml` updated
 - **Dependencies:** Check `pyproject.toml` has pinned versions
 - **Environment setup:** Clear setup instructions in README
+- **Fresh clone:** The final submission must work in Docker. After following the documented setup steps, a new cloner can hit "Run All" on notebooks or run `make run-pipeline` (or the documented equivalent) and reproduce the results.
+- **Data in git:** GitHub refuses files larger than 100 MB. Consider 10 MB a hard upper limit and 1 MB a soft upper limit. Data belongs in Box.
 
 ### Security and Configuration
 - **Secrets:** No API keys, passwords, or tokens in code
@@ -60,6 +78,8 @@
 - **Type hints:** Present on public functions and unclear parameters
 - **Logging:** Use logging instead of print statements
 - **Documentation:** Docstrings explain purpose and return values
+- **Understanding:** The student can explain the purpose of every function in the PR
+- **AI-written text:** PR descriptions, READMEs, and notebook markdown are short, clear, and readable. See [AI Usage Guidelines](./ai-usage-guidelines.md).
 
 ### Style and Professional Practices
 - **No commented-out code:** Remove dead code
@@ -130,6 +150,15 @@
 - Focus on teaching principles, not just fixing immediate issues
 - Build confidence through incremental improvement
 
+#### Vibecoded UIs
+- If students build a UI for any reason (e.g., a data dashboard), they can take more of a "vibecoding" approach
+- The code does not need to be reviewed line-for-line, but the PR should say it was vibecoded
+
+#### Review Timing
+- Code must be pushed every week, but it doesn't have to be merged that same week
+- Complete the review cycle by the following week at the latest
+- The more changes you request, the more important a tight review cycle becomes
+
 ## Priority Framework
 
 ### Critical (Must Fix)
@@ -171,10 +200,24 @@
 
 ## When to Escalate
 
-### Immediate Escalation
-- **Security issues:** Committed secrets, exposed credentials
-- **Plagiarism concerns:** Suspicious code similarities
-- **Scope creep:** Project requirements changing significantly
+Escalate early rather than absorbing the problem yourself. See the clinic's [escalation guide](https://clinic.ds.uchicago.edu/mentor-ta/escalation.html).
+
+### To Technical Advisor...
+Via the mentor-TA Slack channel.
+- A technical problem you cannot solve (environment, Docker, cluster, tooling)
+- A student whose setup still isn't working
+
+If a student can't get their computer set up for a week, that's already ~12% of work time wasted.
+
+### To Project Mentor...
+The mentor will likely escalate to the clinic director.
+- A student is not pushing code, not attending, or not responding
+- Project-level struggles (problem solving, understanding the data, direction)
+- A student is behaving unprofessionally
+- A student asks you to complete their work
+- A student disputes a grade
+- The external mentor is changing the project scope
+- Security issues (committed secrets, exposed credentials)
 
 ### Pattern-Based Escalation
 - **Repeated issues:** Same problems across multiple teams
